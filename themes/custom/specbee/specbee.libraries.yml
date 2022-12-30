@@ -1,11 +1,12 @@
 global-styling:
   version: VERSION
   js:
+    //cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js: {}
     js/global.js: {}
   css:
     component:
+      //cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css: {}
       css/style.css: {}
-      css/colors.css: {}
 bootstrap:
   js:
     /libraries/popper.js/dist/umd/popper.min.js: { weight: -19 }
