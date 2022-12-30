@@ -69,7 +69,7 @@
 
 {% block head %}
 {% if page.secondary_menu or page.top_header or page.top_header_form %}
-<nav{{ navbar_top_attributes }}>
+<nav{{ navbar_top_attributes }} style="display: none;">
   {% if container_navbar %}
   <div class="container">
     {% endif %}
@@ -85,7 +85,7 @@
   {% endif %}
   </nav>
   {% endif %}
-  <nav{{ navbar_attributes }}>
+  <nav{{ navbar_attributes }} style="display: none;">
     {% if container_navbar %}
     <div class="container">
       {% endif %}
@@ -121,9 +121,9 @@
         <main{{ content_attributes }}>
           <section class="section">
             <a id="main-content" tabindex="-1"></a>
-            {{ page.content }}
+            {# {{ page.content }} #}
           </section>
-          <section>
+          <section class="conference__section">
             {% include "@specbee/templates/conference-tabs.html.twig" %}
           </section>
           </main>

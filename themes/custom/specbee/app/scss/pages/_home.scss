@@ -1,0 +1,268 @@
+.conference {
+    &__section {
+        padding: 4rem 0;
+    }
+    &__header {
+        margin-bottom: 5rem;
+    }
+    &__tab {
+        margin-bottom: 30px;
+        border-bottom: 2px solid $border-blue;
+        justify-content: space-around;
+        .nav {
+            &-item {
+                display: flex;
+                align-items: center;
+                width: 33.33%;
+                justify-content: center;
+            }
+            &-link {
+                border: none;
+                position: relative;
+                font-size: 1.125rem;
+                line-height: normal;
+                color: $secondary-color;
+                margin-bottom: 0;
+                transition: all 0.2s ease-in;
+                padding: 1rem;
+                &:hover,
+                &:focus {
+                    border-color: $border-blue;
+                }
+                &.active {
+                    font-size: 1.5rem;
+                    color: $color-dark-grey;
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        bottom: -14px;
+                        left: 50%;
+                        background-color: $color-white;
+                        border: solid $border-blue;
+                        border-width: 0 2px 2px 0;
+                        display: inline-block;
+                        padding: 6px;
+                        transform: rotate(45deg) translateY(-50%);
+                    }
+                }
+            }
+        }
+    }
+    &__card {
+        margin: 0.875rem;
+        border-color: $border-light-grey;
+        position: relative;
+
+        &-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.375rem 0 0 0;
+            img {
+                transition: all 0.5s ease;
+            }
+        }
+        &-featured {
+            position: absolute;
+            left: -35px;
+            top: -35px;
+            background: $color-green;
+            height: 70px;
+            width: 70px;
+            transform: rotate(45deg);
+            &::before {
+                content: '';
+                position: absolute;
+                left: 50px;
+                top: 30px;
+                width: 10px;
+                height: 10px;
+                background: url('#{$images-path}/images/icons/star.svg') no-repeat center center;
+                background-size: 100% auto;
+            }
+            &.Past {
+                display: none;
+            }
+            &.Recommended {
+                background: $secondary-color;
+            }
+        }
+        &-subcription {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: 1px solid $color-white;
+            border-radius: 4px;
+            padding: 0.3rem 0.875rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            color: $color-white;
+            background: rgba($color: #000000, $alpha: 0.3);
+        }
+        &-title {
+            font-size: 1.125rem;
+            margin-bottom: 0.875rem;
+            transition: all 0.5s ease;
+        }
+        &-list {
+            margin-bottom: 0;
+            li {
+                position: relative;
+                padding-left: 25px;
+                font-size: 0.875rem;
+                + li {
+                    margin-top: 10px;
+                }
+            }
+        }
+        &-body {
+            transition: all 0.5s ease;
+        }
+        &-icon {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            background: url('#{$images-path}/images/icons/tag.svg') no-repeat center center;
+            background-size: 100% auto;
+            &--date {
+                background-image: url('#{$images-path}/images/icons/date.svg');
+            }
+            &--location {
+                background-image: url('#{$images-path}/images/icons/location.svg');
+                height: 22px;
+            }
+        }
+        &-footer {
+            position: absolute;
+            left: 0;
+            bottom: -100%;
+            width: 100%;
+            transition: all 0.5s ease;
+            ul {
+                display: flex;
+                padding-left: 0;
+                margin-bottom: 0;
+                border-top: 1px solid $border-light-grey;
+                width: 100%;
+                list-style-type: none;
+                li {
+                    width: 70px;
+                    min-height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    + li {
+                        border-left: 1px solid $border-light-grey;
+                    }
+                    &:last-child {
+                        flex: 1;
+                        a {
+                            color: $color-dark-blue;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            &-icon {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 18px;
+                height: 18px;
+                transform: translate(-50%, -50%);
+                background: url('#{$images-path}/images/icons/heart.svg') no-repeat center center;
+                background-size: 100% auto;
+                &--like {
+                    background-image: url('#{$images-path}/images/icons/heart.svg');
+                    width: 24px;
+                    height: 22px;
+                }
+                &--download {
+                    background-image: url('#{$images-path}/images/icons/download.svg');
+                    width: 28px;
+                    height: 21px;
+                }
+                &--share {
+                    background-image: url('#{$images-path}/images/icons/share.svg');
+                    width: 22px;
+                    height: 24px;
+                }
+            }
+        }
+
+        &:hover {
+            box-shadow: 0 0 10px #ebebeb;
+            .conference__card-title {
+                font-weight: bold;
+            }
+            .conference__card-image {
+                height: 150px;
+                img {
+                    transform: scale(1.1);
+                }
+            }
+            .conference__card-body {
+                padding-bottom: 65px;
+            }
+            .conference__card-footer {
+                bottom: 0;
+            }
+        }
+    }
+}
+
+.view-conference {
+    position: relative;
+    .slick-slider {
+        .slick-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: inline-block;
+            width: auto;
+            z-index: 2;
+            text-indent: -9999px;
+            width: 25px;
+            height: 25px;
+            border: 3px solid $color-dark-blue;
+            background: transparent;
+            transform: rotate(45deg);
+        }
+        .slick-prev {
+            left: -25px;
+            border-width: 0 0 3px 3px;
+        }
+        .slick-next {
+            right: -25px;
+            border-width: 3px 3px 0 0;
+        }
+        .slick-dots {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            margin-top: 1rem;
+            li {
+                button {
+                    border: 1px solid $color-dark-blue;
+                    border-radius: 50%;
+                    display: block;
+                    height: 16px;
+                    width: 16px;
+                    text-indent: -9999px;
+                    line-height: 0;
+                    margin: 0 5px;
+                    background-color: $color-white;
+                }
+                &.slick-active {
+                    button {
+                        background-color: $color-dark-blue;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+<div class="card conference__card">
+    <div class="conference__card-image">
+        <img src="{{ field_image }}" class="card-img-top" alt="{{ title }}">
+        <span class="conference__card-featured {{ field_type }}"></span>
+        <span class="conference__card-subcription">{{ field_subscription }}</span>
+    </div>
+    <div class="card-body conference__card-body">
+        <h5 class="card-title conference__card-title">{{ title }}</h5>
+        <ul class="list-unstyled conference__card-list">
+            <li><span class="conference__card-icon conference__card-icon--tag"></span> {{ field_tags }}</li>
+            <li><span class="conference__card-icon conference__card-icon--date"></span> {{ field_date }}</li>
+            <li><span class="conference__card-icon conference__card-icon--location"></span> {{ field_location }}</li>
+        </ul>
+        <div class="conference__card-footer">
+            <ul>
+                <li><span class="conference__card-footer-icon conference__card-footer-icon--like"></span></li>
+                <li><span class="conference__card-footer-icon conference__card-footer-icon--download"></span></li>
+                <li><span class="conference__card-footer-icon conference__card-footer-icon--share"></span></li>
+                <li><a href="#">View Details</a> </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+{{ title }} == Title
+{{ field_date }} == Date
+{{ field_image }} == Image
+{{ field_location }} == Location
+{{ field_subscription }} == Subscription
+{{ field_tags }} == Tags
+{{ field_type }} == Type
+{{ nothing }} == Custom text
+
+
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+            role="tab" aria-controls="home" aria-selected="true">Home</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+            role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button"
+            role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+</div>

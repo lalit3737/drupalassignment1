@@ -1,25 +1,31 @@
-<ul class="nav nav-tabs" id="myTab" role="tablist">
+<div class="conference__header text-center">
+    <h2>Lorem ipsum dolor. Ismet</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+</div>
+
+<ul class="nav nav-tabs conference__tab" id="conferencesTab" role="tablist">
     <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
-            role="tab" aria-controls="home" aria-selected="true">Featured Conferences</button>
+        <button class="nav-link active" id="featured-tab" data-bs-toggle="tab" data-bs-target="#featured" type="button"
+            role="tab" aria-controls="featured" aria-selected="true">Featured Conferences</button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
-            role="tab" aria-controls="profile" aria-selected="false">Recommended Conferences</button>
+        <button class="nav-link" id="recommended-tab" data-bs-toggle="tab" data-bs-target="#recommended" type="button"
+            role="tab" aria-controls="recommended" aria-selected="false">Recommended Conferences</button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button"
-            role="tab" aria-controls="contact" aria-selected="false">Past Conferences</button>
+        <button class="nav-link" id="past-tab" data-bs-toggle="tab" data-bs-target="#past" type="button" role="tab"
+            aria-controls="past" aria-selected="false">Past Conferences</button>
     </li>
 </ul>
-<div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+<div class="tab-content conference__tab-content" id="conferencesTabContent">
+    <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured-tab">
         {{ drupal_view('conference', 'block_1', 'Featured') }}
     </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="tab-pane fade" id="recommended" role="tabpanel" aria-labelledby="recommended-tab">
         {{ drupal_view('conference', 'block_1', 'Recommended') }}
     </div>
-    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+    <div class="tab-pane fade" id="past" role="tabpanel" aria-labelledby="past-tab">
         {{ drupal_view('conference', 'block_1', 'Past') }}
     </div>
 </div>

@@ -1,0 +1,17 @@
+html {
+    font-size: 16px;
+    @include breakpoint(max-1440) {
+        font-size: 14px;
+    }
+    @include breakpoint(mobile-max) {
+        font-size: 12px;
+    }
+}
+
+body {
+    font-family: $default-font;
+    font-size: 1rem;
+    color: $default-color;
+    -webkit-font-smoothing: antialiased;
+    background: $color-white;
+}
